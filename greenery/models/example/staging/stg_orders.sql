@@ -10,6 +10,7 @@ SELECT
     user_id,
     address_id,
     created_at,
+    date_trunc('hour', created_at) as created_at_hour,
     order_cost,
     shipping_cost,
     order_total,
