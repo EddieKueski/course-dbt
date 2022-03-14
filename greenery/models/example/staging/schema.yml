@@ -1,28 +1,28 @@
 version: 2
 
 models:
-  - name: stg_users
+  - name: stg_postgre_users
     description: Contains user's information 
     columns:
       - name: user_id
         tests: 
         - not_null
 
-  - name: stg_addresses
+  - name: stg_postgre_addresses
     description: Contains additional address details
 
-  - name: stg_events
+  - name: stg_postgre_events
     description: Contains customer level events
 
-  - name: stg_order_items
+  - name: stg_postgre_order_items
     description:  Contains order and product ids
 
-  - name: stg_orders
+  - name: stg_postgre_orders
     description:  Contains order informations
 
-  - name: stg_products
+  - name: stg_postgre_products
     description: Contains additional product information
 
-  - name: stg_promos
+  - name: stg_postgre_promos
     description: Contains information about any possible discounts
 
