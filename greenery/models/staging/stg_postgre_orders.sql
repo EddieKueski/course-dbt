@@ -4,6 +4,12 @@
   )
 }}
 
+WITH orders AS(
+SELECT *
+
+FROM {{ source('postgre_source', 'orders') }}
+)
+
 SELECT 
     order_id,
     promo_id,
@@ -20,4 +26,4 @@ SELECT
     delivered_at,
     status
 
-FROM {{ source('greenery', 'orders') }}
+FROM orders

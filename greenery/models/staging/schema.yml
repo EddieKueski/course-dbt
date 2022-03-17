@@ -1,5 +1,5 @@
 version: 2
---store-failures
+
 
 models:
   - name: stg_postgre_users
@@ -17,16 +17,33 @@ models:
 
   - name: stg_postgre_events
     description: Contains customer level events
+    columns:
+    - name: event_id
+      tests: 
+      - not_null
 
   - name: stg_postgre_order_items
     description:  Contains order and product ids
+    columns:
+    - name: product_id
+      tests: 
+      - not_null
 
   - name: stg_postgre_orders
     description:  Contains order informations
+    columns:
+    - name: status
+      tests: 
+      - accepted_values:
+          values: ['shipped', 'preparing', 'delivered']
 
   - name: stg_postgre_products
     description: Contains additional product information
 
   - name: stg_postgre_promos
     description: Contains information about any possible discounts
+    columns:
+    - name: discount
+      tests: 
+      - positive_values
 

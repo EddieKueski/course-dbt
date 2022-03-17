@@ -4,11 +4,17 @@
   )
 }}
 
+WITH addresses AS(
+SELECT *
+
+FROM {{ source('postgre_source', 'addresses') }}
+)
+
 SELECT 
     address_id,
     address,
-    zipcode,
+    CAST (zipcode as VARCHAR) AS zipcode,
     state,
     country
     
-FROM {{ source('greenery', 'addresses') }}
+FROM addresses

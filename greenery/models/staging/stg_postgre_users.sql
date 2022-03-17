@@ -4,6 +4,12 @@
   )
 }}
 
+WITH users AS(
+SELECT *
+
+FROM {{ source('postgre_source', 'users') }}
+)
+
 SELECT 
     user_id,
     first_name,
@@ -12,6 +18,5 @@ SELECT
     phone_number,
     created_at,
     updated_at,
-    address_id
-
-FROM {{ source('greenery', 'users') }}
+    address_id 
+FROM users

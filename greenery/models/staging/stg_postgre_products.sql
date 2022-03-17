@@ -4,10 +4,16 @@
   )
 }}
 
+WITH products AS(
+SELECT *
+
+FROM {{ source('postgre_source', 'products') }}
+)
+
 SELECT 
     product_id,
     name,
     price,
     inventory
 
-FROM {{ source('greenery', 'products') }}
+FROM products

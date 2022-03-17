@@ -4,6 +4,12 @@
   )
 }}
 
+WITH events AS(
+SELECT *
+
+FROM {{ source('postgre_source', 'events') }}
+)
+
 SELECT 
    event_id,
    session_id,
@@ -15,4 +21,4 @@ SELECT
    order_id,
    product_id
 
-FROM {{ source('greenery', 'events') }}
+FROM events
