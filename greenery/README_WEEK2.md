@@ -79,5 +79,6 @@
             - Discount should be positive
 
 ### Did you find any “bad” data as you added and ran tests on your models? How did you go about either cleaning the data in the dbt model or adjusting your assumptions/tests?
-    > I did not find any bad data, however I had to cast the zipcode as a Varchart since the staging phase as I wanted to create a single test to verify if every zipcode contained only 5 digits.
+    > I did not find any bad data, however I had to cast the zipcode as a Varchart since the staging phase as
+    I wanted to create a single test to verify if every zipcode contained only 5 digits.
     
