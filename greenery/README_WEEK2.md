@@ -59,7 +59,7 @@
         - Product
             - Two fct tables with basic information about the events and orders
 
-            
+    ![alt text](https://github.com/EddieKueski/course-dbt/blob/main/greenery/W2_DAG.png)        
 
     >  Within the schema.yml from the staging directory, I added almost a test per table. 
         - stg_postgre_users
