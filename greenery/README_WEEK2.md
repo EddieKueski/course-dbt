@@ -57,9 +57,9 @@
             - One fact table with the orders that used a promo effectively
             - Two intermidate tables to build the tables above
         - Product
-            - Two fct tables with basic information about the events and orders
-
+            - Two fct tables with basic information about the events and orders 
             
+   ![alt text](https://github.com/EddieKueski/course-dbt/blob/main/greenery/W2_DAG.png)   
 
     >  Within the schema.yml from the staging directory, I added almost a test per table. 
         - stg_postgre_users
@@ -79,5 +79,6 @@
             - Discount should be positive
 
 ### Did you find any “bad” data as you added and ran tests on your models? How did you go about either cleaning the data in the dbt model or adjusting your assumptions/tests?
-    > I did not find any bad data, however I had to cast the zipcode as a Varchart since the staging phase as I wanted to create a single test to verify if every zipcode contained only 5 digits.
+    > I did not find any bad data, however I had to cast the zipcode as a Varchart since the staging phase as
+    I wanted to create a single test to verify if every zipcode contained only 5 digits.
     
