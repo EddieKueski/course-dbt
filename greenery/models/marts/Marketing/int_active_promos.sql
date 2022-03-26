@@ -7,9 +7,9 @@
 SELECT
     promo_id
     , discount 
-    , status
+    , promo_status
 
 
-FROM {{ref('stg_postgre_promos')}}
+FROM {{ref('fct_promos')}}
 
-WHERE status = 'active'
+WHERE promo_status = 'active'

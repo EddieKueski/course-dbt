@@ -7,7 +7,7 @@
 SELECT
     DISTINCT user
     , delivery_delay_days
-    , zipcode
+    , int_usa_addresses.zipcode
     , shipping_service
 
 

@@ -1,0 +1,16 @@
+version: 2
+
+
+models:
+  - name: fct_order_product
+    description: "Grouped information of products at order id level"
+    columns:
+      - name: order_id
+        description: "The primary key for this table"
+
+  - name: fct_product_sales
+    description: "Information of how many products where sold each day, grouped by product_id and date"
+    
+  - name: int_order_product
+    description: "Order products information"
+  

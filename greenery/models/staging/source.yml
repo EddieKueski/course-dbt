@@ -23,7 +23,7 @@ sources:
 
       - name: addresses
         description: >
-          Contains additional address details
+          Contains additional addresses details
 
       - name: events
         loaded_at_field: created_at

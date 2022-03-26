@@ -11,3 +11,33 @@ models:
         - unique:
             config:
                 store_failures: true  # always store failures
+
+  - name: dim_product
+    description: "Dimension table for products"
+    columns:
+      - name: product_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_order_items
+    description: "Information on the products for each order"
+
+  - name: fct_orders
+    description: "Basic information for each order"
+    columns:
+      - name: order_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_promos
+    description: "Discount and status of every promo"
+    columns:
+      - name: promo_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
