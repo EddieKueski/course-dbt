@@ -37,6 +37,12 @@ models:
     example:
       +materialized: view
 
+  post-hook:
+    - "GRANT SELECT ON {{ this }} TO reporting"
+
+on-run-end:
+  - "GRANT USAGE ON {{ target.schema }} TO reporting"
+
 dispatch:
   - macro_namespace: dbt_utils
     search_order: [materialize_dbt_utils, dbt_utils]
