@@ -1,18 +1,22 @@
+
+   
 {{
-  config(
-    materialized='table'
-  )
+    config(
+        materialized = 'table'
+    )
 }}
 
-SELECT
-    user_id
-    , COUNT( DISTINCT session_id) AS num_sessions
-    , COUNT( DISTINCT order_id) AS num_orders
-    , MAX(created_at) AS lastest_event_date
-    , MAX(page_url) AS lastest_page_url
-    , MAX(event_type) AS lastest_event
+{% set event_types = get_distinct_values(ref('stg_postgre_events'), 'event_type') %}
 
+SELECT
+    session_id
+    , max(order_id) as order_id
+    , count(distinct(order_id)) as n_order_ids
+    , count(distinct(product_id)) as products_to_cart
+
+   {% for event_type in event_types %}
+    , BOOL_OR(CASE WHEN event_type = '{{event_type}}' THEN TRUE ELSE FALSE END) AS has_{{event_type}}
+   {% endfor %}
 
 FROM {{ref('stg_postgre_events')}}
-
-GROUP BY user_id
+GROUP BY session_id
