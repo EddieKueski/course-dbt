@@ -130,3 +130,4 @@ FROM {{ref('stg_postgre_promos')}}
 ## Part V 
 #### DAG
 
+![DAG_W3](https://github.com/EddieKueski/course-dbt/blob/main/greenery/dbt-dag.png)
