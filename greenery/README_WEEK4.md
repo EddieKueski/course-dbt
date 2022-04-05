@@ -48,7 +48,7 @@ Models created:
 **Reflecting on your learning in this class...**
 
 **How would you pitch the value of dbt/analytics engineering to a decision maker at your organization?**
-- Explaning how by changing from ETL to ELT and also using dbt to transform the data we can feed our BI tools more efficiently.
+- Explaining how by changing from ETL to ELT and also using dbt to transform the data we can feed our BI tools more efficiently.
 
 **What skills have you picked that give you the most confidence in pursuing this next step?**
 - Using git for colaborating, and dbt in order to improve the governance of the models
